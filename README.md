@@ -45,16 +45,17 @@ git config --global http.https://github.com.proxy http://<proxyhost>:<port>
 
 Each time you **start** a new Git Bash session the `speedup.sh` script will be run.
 
-### Worth noting
+### Worth noticing about the startup
 
 The first time you start a Git Bash it after installing git-bash-express it will copy your `.gitconfig` and `.ssh` (if missing) to your home directory on your local disk.
 Any new change you make using `git config --global` will be stored on your local disk instead of the network disk.
-Since startup of Git Bash will still be slow, each startup will also backup the latest local `.gitconfig` to your network drive as `.gitconfig.bak`
+
+Git Bash will still start by accessing thet network drive to read the `/h/.bash_profile` file so startup of Git Bash will still be slow. I thought it worth the extra startup time to also backup the latest local `.gitconfig` to your network drive as `.gitconfig.bak`. That way you get some benefit from the network drive.
 
 ## Verify installation
 
-`git config --list --show-origin` will show you that configurations are no longer read from the network drive.
-Your `PATH` variable should no longer contain any refences to your network drive.
+* `git config --list --show-origin` will show you that configurations are no longer read from the network drive.
+* Your `PATH` variable should no longer contain any refences to your network drive.
 
 ## Uninstalling
 
