@@ -25,6 +25,12 @@ There are plenty of explanatory comments in the [speedup.sh](speedup.sh) script.
 
 ## Installation
 
+**Note** You may need to set up Git to use the proxy to clone from github.com using https: 
+
+```bash
+git config --global http.https://github.com.proxy http://<proxyhost>:<port>
+```
+
 * Clone this repo to a location of your choice, e.g. `/c/dev/`
 * If needed, edit the `speedup.sh` script to:
   * Set your default start directory unless you like `DEFAULT_START_DIR=/c/projects`, "Git Bash here..." still works
