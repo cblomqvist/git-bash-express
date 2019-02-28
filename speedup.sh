@@ -4,6 +4,9 @@
 # Please set DEFAULT_START_DIR to your preferred default start location.
 # NOTE: The order we do things in this file also affects the speed of the startup and this is the order I have found to be the fastest to execute.
 
+# Fix PATH to exclude locations on /h/ by replacing it with references to /c/.
+export PATH=${PATH//\/h\//\/c\/}
+
 # Git for Windows (MINGW) and Cygwin uses different conventions to find the C: drive
 # In Cygwin you need to start the path with /cygdrive while Git for Windows uses just /
 # before the drive letter in the path.
@@ -16,9 +19,6 @@ if [[ $(uname) == MINGW* ]]; then
         echo "MINGW detected by speedup.sh"
         ROOT_PREFIX=
 fi
-
-# Fix PATH to exclude locations on /h/ by replacing it with references to /c/.
-export PATH=${PATH//\/h\//\/c\/}
 
 # The directory you want to start Git Bash in unless you have used the right click context menu option "Git Bash here...".
 # The default value is ${HOME} which points to "/h/" which is your network drive and you NEVER want to use that one for Git repos.
