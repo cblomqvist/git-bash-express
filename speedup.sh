@@ -22,7 +22,7 @@ fi
 
 # The directory you want to start Git Bash in unless you have used the right click context menu option "Git Bash here...".
 # The default value is ${HOME} which points to "/h/" which is your network drive and you NEVER want to use that one for Git repos.
-DEFAULT_START_DIR=${ROOT_PREFIX}/c/projects
+DEFAULT_START_DIR=${ROOT_PREFIX}/c/repos
 
 # Make Git Bash start by default in ${DEFAULT_START_DIR} unless we used "Git bash here".
 if [ ${PWD} = "${ROOT_PREFIX}/h/" ] ; then
